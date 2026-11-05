@@ -6,4 +6,3 @@ import { PoliciesController } from './policies.controller.js';
 })
 export class PoliciesModule {}
 
-
