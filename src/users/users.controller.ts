@@ -12,7 +12,7 @@ import {
   ParseEnumPipe
 } from '@nestjs/common';
 import { User } from './user.entity.js';
-import { Role } from './enums/role.enums.js';
+import { Role } from './enums/role.enum.js';
 
 @Controller('users')
 export class UsersController {
