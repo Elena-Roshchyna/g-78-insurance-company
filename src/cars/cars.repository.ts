@@ -13,16 +13,26 @@ export class CarsRepository {
   async save(car: Car): Promise<Car> {
     return this.repository.save(car);
   }
-
   async findAllActive(): Promise<Car[]> {
-    return this.repository.findBy({ active: true });
+    return this.repository.find({
+      where: { active: true },
+      relations: {
+        owner: true,
+      },
+    });
   }
 
   async findById(id: number): Promise<Car | null> {
-    return this.repository.findOneBy({ id });
+    return this.repository.findOne({
+      where: { id },
+      relations: {
+        owner: true,
+      },
+    });
   }
 
   async deleteById(id: number): Promise<void> {
     await this.repository.delete(id);
   }
 }
+

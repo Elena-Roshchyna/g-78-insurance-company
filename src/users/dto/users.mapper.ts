@@ -31,4 +31,3 @@ export class UsersMapper{
     return entityList.map((user: User): UserDto => this.mapEntityToDto(user));
   }
 }
-
