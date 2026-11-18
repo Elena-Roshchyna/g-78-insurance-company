@@ -1,4 +1,5 @@
-import { Length, Matches } from 'class-validator';
+import { Length, Matches, Validate } from 'class-validator';
+import { CarYearValidator } from '../validation/car-year.validator.js';
 
 export class CarSaveDto {
   @Length(2, 20)
@@ -15,8 +16,12 @@ export class CarSaveDto {
   })
   model: string;
 
-  // Добавить дополнительный валидатор
-  year: number;
+
+  @Validate(CarYearValidator, {
+    message: "Car year should be between 1900 and current year"
+  })
+  year: number
+
 
   @Matches(/^[A-Z\d]{17}$/, {
     message:

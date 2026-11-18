@@ -16,7 +16,7 @@ export class PoliciesMapper {
     const entity: Policy = new Policy();
     entity.type = saveDto.type;
     entity.coverageInCent = saveDto.coverage * 100;
-    entity.issueAt = saveDto.issuedAt;
+    entity.issuedAt = saveDto.issuedAt;
     entity.expiresAt = saveDto.expiresAt;
     return entity;
   }
@@ -29,7 +29,7 @@ export class PoliciesMapper {
     dto.agent = this.usersMapper.mapEntityToDto(entity.agent);
     dto.cars = this.carsMapper.mapEntityListToDtoList(entity.cars);
     dto.coverage = entity.coverageInCent / 100;
-    dto.issuedAt = entity.issueAt;
+    dto.issuedAt = entity.issuedAt;
     dto.expiresAt = entity.expiresAt;
     return dto;
   }

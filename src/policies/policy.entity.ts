@@ -34,8 +34,8 @@ export class Policy {
   @Column({ name: 'coverage_in_cent', nullable: false, unique: false })
   coverageInCent: number;
 
-  @Column({ name: 'issue_at', nullable: false, unique: false })
-  issueAt: Date;
+  @Column({ name: 'issued_at', nullable: false, unique: false })
+  issuedAt: Date;
 
   @Column({ name: 'expires_at', nullable: false, unique: false })
   expiresAt: Date;
@@ -43,4 +43,3 @@ export class Policy {
   @Column({ name: 'active', nullable: false, unique: false, default: true })
   active: boolean;
 }
-
