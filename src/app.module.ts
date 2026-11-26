@@ -3,6 +3,8 @@ import { UsersModule } from './users/users.module.js';
 import { CarsModule } from './cars/cars.module.js';
 import { PoliciesModule } from './policies/policies.module.js';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { EmbeddingsModule } from './embeddings/embeddings-module.js';
+import { AiModule } from './ai/ai.module.js';
 
 @Module({
   imports: [
@@ -19,6 +21,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     UsersModule,
     CarsModule,
     PoliciesModule,
+    AiModule,
+    EmbeddingsModule
   ],
 })
 export class AppModule {}
